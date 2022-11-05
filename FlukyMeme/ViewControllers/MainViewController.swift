@@ -40,6 +40,7 @@ extension MainViewController {
             }
 
             let decoder = JSONDecoder()
+            
             do {
                 let meme = try decoder.decode(Meme.self, from: data)
                 print(meme)
@@ -48,12 +49,11 @@ extension MainViewController {
                 DispatchQueue.main.async {
                     self?.memeLabel.text = meme.title
                 }
+                
             } catch let error {
                 print(error.localizedDescription)
             }
             
-            
-           
         }.resume()
     }
     
@@ -71,7 +71,9 @@ extension MainViewController {
             DispatchQueue.main.async {
                 self?.memeImageView.image = image
                 self?.activityIndicator.stopAnimating()
+                
             }
+            
         }.resume()
     }
 }
