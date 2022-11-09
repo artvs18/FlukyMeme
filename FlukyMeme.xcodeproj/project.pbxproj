@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51062B71291C27AD002F2223 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51062B70291C27AD002F2223 /* NetworkManager.swift */; };
 		513FA1C329148D8C00A55D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FA1C229148D8C00A55D61 /* AppDelegate.swift */; };
 		513FA1C529148D8C00A55D61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FA1C429148D8C00A55D61 /* SceneDelegate.swift */; };
 		513FA1C729148D8C00A55D61 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FA1C629148D8C00A55D61 /* MainViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51062B70291C27AD002F2223 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		513FA1BF29148D8C00A55D61 /* FlukyMeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlukyMeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513FA1C229148D8C00A55D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		513FA1C429148D8C00A55D61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,11 +41,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51062B6F291C271D002F2223 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				513FA1CB29148D9000A55D61 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		51062B72291C27B9002F2223 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				51062B70291C27AD002F2223 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		513FA1B629148D8C00A55D61 = {
 			isa = PBXGroup;
 			children = (
 				513FA1C129148D8C00A55D61 /* FlukyMeme */,
-				513FA1CB29148D9000A55D61 /* Assets.xcassets */,
 				513FA1C029148D8C00A55D61 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +80,8 @@
 				513FA1DF29148FA100A55D61 /* Models */,
 				513FA1D829148EFD00A55D61 /* ViewControllers */,
 				513FA1D729148EDF00A55D61 /* Storyboards */,
+				51062B6F291C271D002F2223 /* Resources */,
+				51062B72291C27B9002F2223 /* Services */,
 			);
 			path = FlukyMeme;
 			sourceTree = "<group>";
@@ -175,6 +194,7 @@
 			files = (
 				513FA1C729148D8C00A55D61 /* MainViewController.swift in Sources */,
 				513FA1DD29148F8000A55D61 /* Meme.swift in Sources */,
+				51062B71291C27AD002F2223 /* NetworkManager.swift in Sources */,
 				513FA1C329148D8C00A55D61 /* AppDelegate.swift in Sources */,
 				513FA1C529148D8C00A55D61 /* SceneDelegate.swift in Sources */,
 			);
