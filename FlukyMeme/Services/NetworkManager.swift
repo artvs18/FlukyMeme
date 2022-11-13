@@ -14,7 +14,7 @@ enum NetworkError: Error {
 }
 
 enum Link: String {
-    case url = "https://meme-api.herokuapp.com/gimme"
+    case memeListURL = "https://meme-api.herokuapp.com/gimme/50"
 }
 
 class NetworkManager {

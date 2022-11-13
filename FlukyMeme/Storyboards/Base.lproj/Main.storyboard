@@ -1,84 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xsF-Jb-vHM">
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="qPz-PJ-hgy">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="FlukyMeme" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <navigationController id="xsF-Jb-vHM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SYq-Ed-R9H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NqF-Q3-ZZN" kind="relationship" relationship="rootViewController" id="OdD-9M-AVJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qt2-kB-PwX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="-3"/>
+        </scene>
+        <!--Meme List View Controller-->
+        <scene sceneID="mhI-TH-fw1">
+            <objects>
+                <tableViewController id="NqF-Q3-ZZN" customClass="MemeListViewController" customModule="FlukyMeme" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="200" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Drq-la-HtR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="memeCell" rowHeight="473" id="oBf-ae-qFy" customClass="MemeCell" customModule="FlukyMeme" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="320" height="473"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oBf-ae-qFy" id="v9P-j5-15S">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="473"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAHA, CLASSIC😎" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-Zr-D6R">
+                                            <rect key="frame" x="16" y="15" width="288" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMz-fc-WNx">
+                                            <rect key="frame" x="10" y="63" width="300" height="400"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" secondItem="dMz-fc-WNx" secondAttribute="width" multiplier="4:3" id="wg2-0B-9to"/>
+                                            </constraints>
+                                        </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jiw-u8-iiQ">
+                                            <rect key="frame" x="141.5" y="218" width="37" height="37"/>
+                                            <color key="color" systemColor="systemBlueColor"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="RsN-Zr-D6R" secondAttribute="trailing" constant="16" id="JUj-0O-oE1"/>
+                                        <constraint firstItem="RsN-Zr-D6R" firstAttribute="top" secondItem="v9P-j5-15S" secondAttribute="top" constant="15" id="Med-iH-Nzw"/>
+                                        <constraint firstAttribute="bottom" secondItem="dMz-fc-WNx" secondAttribute="bottom" constant="10" id="MzQ-hU-Q3x"/>
+                                        <constraint firstAttribute="trailing" secondItem="dMz-fc-WNx" secondAttribute="trailing" constant="10" id="QDU-oA-3fF"/>
+                                        <constraint firstItem="RsN-Zr-D6R" firstAttribute="leading" secondItem="v9P-j5-15S" secondAttribute="leading" constant="16" id="RrK-TP-pDy"/>
+                                        <constraint firstItem="dMz-fc-WNx" firstAttribute="top" secondItem="RsN-Zr-D6R" secondAttribute="bottom" constant="5" id="UPo-at-0QS"/>
+                                        <constraint firstItem="jiw-u8-iiQ" firstAttribute="centerY" secondItem="v9P-j5-15S" secondAttribute="centerY" id="WzP-GC-IKk"/>
+                                        <constraint firstItem="jiw-u8-iiQ" firstAttribute="centerX" secondItem="v9P-j5-15S" secondAttribute="centerX" id="tju-2O-mrw"/>
+                                        <constraint firstItem="dMz-fc-WNx" firstAttribute="leading" secondItem="v9P-j5-15S" secondAttribute="leading" constant="10" id="w1L-LA-3aR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityIndicator" destination="jiw-u8-iiQ" id="bmh-9L-Rve"/>
+                                    <outlet property="memeImageView" destination="dMz-fc-WNx" id="Auc-bm-Qif"/>
+                                    <outlet property="memeLabel" destination="RsN-Zr-D6R" id="0Mp-yQ-S9z"/>
+                                    <segue destination="nUQ-sR-VcE" kind="presentation" id="1pb-Dx-Nuo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NqF-Q3-ZZN" id="zgj-B8-PXN"/>
+                            <outlet property="delegate" destination="NqF-Q3-ZZN" id="jg4-OB-Uew"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" style="editor" id="bDw-MU-jEi">
+                        <barButtonItem key="rightBarButtonItem" id="clu-h5-iH6">
+                            <imageReference key="image" image="arrow.clockwise.icloud" catalog="system" symbolScale="large"/>
+                            <connections>
+                                <action selector="moreFlukyMemesButtonTapped:" destination="NqF-Q3-ZZN" id="x8W-ba-vC2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fd-IZ-o3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916.875" y="-3.1690140845070425"/>
+        </scene>
+        <!--Meme Info View Controller-->
+        <scene sceneID="Fk9-ud-QWC">
+            <objects>
+                <viewController id="nUQ-sR-VcE" customClass="MemeInfoViewController" customModule="FlukyMeme" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Xv-sy-Tgb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2k8-ke-uEs">
-                                <rect key="frame" x="16" y="612" width="343" height="45"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHT-Lx-i4U">
+                                <rect key="frame" x="0.0" y="248" width="320" height="300"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cDc-RZ-WBg">
+                                        <rect key="frame" x="135" y="8.5" width="50" height="8.5"/>
+                                        <color key="tintColor" systemColor="systemGrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="1c2-hv-g2M"/>
+                                            <constraint firstAttribute="height" constant="25" id="aZ9-AF-5f6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Meme description" translatesAutoresizingMaskIntoConstraints="NO" id="bZC-qK-r6q">
+                                        <rect key="frame" x="16" y="20" width="288" height="260"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="nMg-jg-aVi"/>
+                                    <constraint firstItem="bZC-qK-r6q" firstAttribute="top" secondItem="mHT-Lx-i4U" secondAttribute="top" constant="20" id="BU3-d9-TVn"/>
+                                    <constraint firstItem="cDc-RZ-WBg" firstAttribute="centerX" secondItem="mHT-Lx-i4U" secondAttribute="centerX" id="HS1-B8-rJZ"/>
+                                    <constraint firstItem="cDc-RZ-WBg" firstAttribute="top" secondItem="mHT-Lx-i4U" secondAttribute="top" id="SPM-gu-vuV"/>
+                                    <constraint firstAttribute="bottom" secondItem="bZC-qK-r6q" secondAttribute="bottom" constant="20" id="U4H-EQ-QFO"/>
+                                    <constraint firstAttribute="trailing" secondItem="bZC-qK-r6q" secondAttribute="trailing" constant="16" id="eQj-zP-iZ4"/>
+                                    <constraint firstItem="bZC-qK-r6q" firstAttribute="leading" secondItem="mHT-Lx-i4U" secondAttribute="leading" constant="16" id="pbX-8K-Qrb"/>
+                                    <constraint firstAttribute="height" constant="300" id="yIx-dn-HUa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Show Fluky Meme">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="flukeMemeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7H-RY-lYY"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s2V-3l-loF">
-                                <rect key="frame" x="16" y="49" width="343" height="553"/>
-                            </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="l6z-lk-U0c">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <color key="color" systemColor="systemBlueColor"/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAHA, CLASSIC 😎" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36V-na-FaR">
-                                <rect key="frame" x="16" y="20" width="343" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="eUI-BH-ytR"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="l6z-lk-U0c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0X2-qs-Y5j"/>
-                            <constraint firstItem="2k8-ke-uEs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Bhy-vO-0N8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s2V-3l-loF" secondAttribute="trailing" constant="16" id="MbO-Fc-Ean"/>
-                            <constraint firstItem="l6z-lk-U0c" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ur6-XI-a0s"/>
-                            <constraint firstAttribute="trailing" secondItem="36V-na-FaR" secondAttribute="trailing" constant="16" id="elw-FM-9Qk"/>
-                            <constraint firstItem="s2V-3l-loF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hAc-j2-L34"/>
-                            <constraint firstItem="s2V-3l-loF" firstAttribute="top" secondItem="36V-na-FaR" secondAttribute="bottom" constant="5" id="pxJ-El-Lp9"/>
-                            <constraint firstItem="2k8-ke-uEs" firstAttribute="top" secondItem="s2V-3l-loF" secondAttribute="bottom" constant="10" id="qQu-GM-uwA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2k8-ke-uEs" secondAttribute="bottom" constant="10" id="sEx-0b-oRH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2k8-ke-uEs" secondAttribute="trailing" constant="16" id="sfA-WV-Izn"/>
-                            <constraint firstItem="36V-na-FaR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tJ4-qd-Jts"/>
-                            <constraint firstItem="36V-na-FaR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xTO-n7-ebE"/>
+                            <constraint firstItem="mHT-Lx-i4U" firstAttribute="leading" secondItem="eUI-BH-ytR" secondAttribute="leading" id="fzK-eU-MUi"/>
+                            <constraint firstItem="eUI-BH-ytR" firstAttribute="trailing" secondItem="mHT-Lx-i4U" secondAttribute="trailing" id="gK5-h4-zUe"/>
+                            <constraint firstAttribute="bottom" secondItem="mHT-Lx-i4U" secondAttribute="bottom" id="rRP-H6-wft"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BI3-5r-zcL"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="l6z-lk-U0c" id="hCi-qJ-sPK"/>
-                        <outlet property="memeImageView" destination="s2V-3l-loF" id="06W-z8-QKk"/>
-                        <outlet property="memeLabel" destination="36V-na-FaR" id="L4j-MJ-cKw"/>
+                        <outlet property="memeDescriptionTW" destination="bZC-qK-r6q" id="bHb-Kw-5Zp"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hG-6q-fba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="-3.1484257871064472"/>
+            <point key="canvasLocation" x="1711.875" y="-3.1690140845070425"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise.icloud" catalog="system" width="128" height="90"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -88,8 +167,8 @@
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
