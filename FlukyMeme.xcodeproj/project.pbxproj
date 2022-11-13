@@ -17,6 +17,7 @@
 		51D2F514291C4BCC00857887 /* MemeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2F513291C4BCC00857887 /* MemeListViewController.swift */; };
 		51D2F516291C5A3A00857887 /* MemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2F515291C5A3A00857887 /* MemeCell.swift */; };
 		51FBBDC329214A36007B03E1 /* MemeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBBDC229214A36007B03E1 /* MemeInfoViewController.swift */; };
+		51FBBDC629216C9C007B03E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 51FBBDC529216C9C007B03E1 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51FBBDC629216C9C007B03E1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +153,9 @@
 			dependencies = (
 			);
 			name = FlukyMeme;
+			packageProductDependencies = (
+				51FBBDC529216C9C007B03E1 /* Alamofire */,
+			);
 			productName = FlukyMeme;
 			productReference = 513FA1BF29148D8C00A55D61 /* FlukyMeme.app */;
 			productType = "com.apple.product-type.application";
@@ -179,6 +184,9 @@
 				Base,
 			);
 			mainGroup = 513FA1B629148D8C00A55D61;
+			packageReferences = (
+				51FBBDC429216C9C007B03E1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 513FA1C029148D8C00A55D61 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -442,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		51FBBDC429216C9C007B03E1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51FBBDC529216C9C007B03E1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51FBBDC429216C9C007B03E1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 513FA1B729148D8C00A55D61 /* Project object */;
 }
