@@ -57,6 +57,7 @@ extension MemeListViewController {
         let memeInfoVC = segue.destination as? MemeInfoViewController
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         memeInfoVC?.memeDescription = memeList?.memes[indexPath.row].memeDescription
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: - Network

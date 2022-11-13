@@ -15,15 +15,12 @@ struct Meme: Decodable {
     let subreddit: String
     let title: String
     let url: String
-    let nsfw: Bool
-    let spoiler: Bool
     let author: String
     let ups: Int
-    let preview: [String]
     
     var memeDescription: String {
         """
-        Orrigin subreddit: \(subreddit)
+        Origin subreddit: \(subreddit)
         Author: \(author)
         Title: \(title)
         Number of upvotes: \(ups)
