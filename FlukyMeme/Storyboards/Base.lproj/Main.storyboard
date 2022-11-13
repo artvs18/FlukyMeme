@@ -48,14 +48,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMz-fc-WNx">
-                                            <rect key="frame" x="10" y="63" width="300" height="400"/>
+                                            <rect key="frame" x="10" y="64" width="300" height="399"/>
+                                            <color key="tintColor" systemColor="labelColor"/>
                                             <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" secondItem="dMz-fc-WNx" secondAttribute="width" multiplier="4:3" id="wg2-0B-9to"/>
                                             </constraints>
+                                            <imageReference key="image" image="circle.dashed" catalog="system" renderingMode="template"/>
                                         </imageView>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jiw-u8-iiQ">
-                                            <rect key="frame" x="141.5" y="218" width="37" height="37"/>
+                                            <rect key="frame" x="141.5" y="244.5" width="37" height="37"/>
                                             <color key="color" systemColor="systemBlueColor"/>
                                         </activityIndicatorView>
                                     </subviews>
@@ -66,8 +68,8 @@
                                         <constraint firstAttribute="trailing" secondItem="dMz-fc-WNx" secondAttribute="trailing" constant="10" id="QDU-oA-3fF"/>
                                         <constraint firstItem="RsN-Zr-D6R" firstAttribute="leading" secondItem="v9P-j5-15S" secondAttribute="leading" constant="16" id="RrK-TP-pDy"/>
                                         <constraint firstItem="dMz-fc-WNx" firstAttribute="top" secondItem="RsN-Zr-D6R" secondAttribute="bottom" constant="5" id="UPo-at-0QS"/>
-                                        <constraint firstItem="jiw-u8-iiQ" firstAttribute="centerY" secondItem="v9P-j5-15S" secondAttribute="centerY" id="WzP-GC-IKk"/>
-                                        <constraint firstItem="jiw-u8-iiQ" firstAttribute="centerX" secondItem="v9P-j5-15S" secondAttribute="centerX" id="tju-2O-mrw"/>
+                                        <constraint firstItem="jiw-u8-iiQ" firstAttribute="centerY" secondItem="dMz-fc-WNx" secondAttribute="centerY" id="WzP-GC-IKk"/>
+                                        <constraint firstItem="jiw-u8-iiQ" firstAttribute="centerX" secondItem="dMz-fc-WNx" secondAttribute="centerX" id="tju-2O-mrw"/>
                                         <constraint firstItem="dMz-fc-WNx" firstAttribute="leading" secondItem="v9P-j5-15S" secondAttribute="leading" constant="10" id="w1L-LA-3aR"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -157,6 +159,7 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise.icloud" catalog="system" width="128" height="90"/>
+        <image name="circle.dashed" catalog="system" width="128" height="123"/>
         <image name="minus" catalog="system" width="128" height="26"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
