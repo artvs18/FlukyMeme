@@ -8,7 +8,6 @@
 import UIKit
 
 class MemeInfoViewController: UIViewController {
-    
     @IBOutlet weak var memeDescriptionTW: UITextView! {
         didSet {
             memeDescriptionTW.text = memeDescription
@@ -22,4 +21,3 @@ class MemeInfoViewController: UIViewController {
         dismiss(animated: true)
     }
 }
-

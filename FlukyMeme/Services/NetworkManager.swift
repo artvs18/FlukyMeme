@@ -6,12 +6,7 @@
 //
 
 import Foundation
-
-enum NetworkError: Error {
-    case invalidURL
-    case noData
-    case decodingError
-}
+import Alamofire
 
 enum Link: String {
     case memeListURL = "https://meme-api.herokuapp.com/gimme/50"
@@ -22,45 +17,30 @@ class NetworkManager {
     
     private init() {}
     
-    func fetch<T: Decodable>(_ type: T.Type, from url: String?, completion: @escaping (Result<T, NetworkError>) -> Void) {
-        guard let url = URL(string: url ?? "") else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                completion(.failure(.noData))
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let type = try JSONDecoder().decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(type))
+    func fetchMemeList(from url: String, completion: @escaping(Result<MemeList, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let memeList = MemeList.getMemeListData(from: value)
+                    completion(.success(memeList))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
-            } catch let error {
-                print(error.localizedDescription)
             }
-        }.resume()
     }
     
-    func fetchImage(from url: String?, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-        guard let url = URL(string: url ?? "") else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else {
-                completion(.failure(.noData))
-                return
+    func fetchImageData(from url: String, completion: @escaping(Result<Data, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { dataResponse in
+                switch dataResponse.result {
+                case .success(let imageData):
+                    completion(.success(imageData))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-            DispatchQueue.main.async {
-                completion(.success(imageData))
-            }
-        }
     }
-    
 }

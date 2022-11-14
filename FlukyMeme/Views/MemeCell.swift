@@ -8,7 +8,6 @@
 import UIKit
 
 class MemeCell: UITableViewCell {
-    
     @IBOutlet var memeLabel: UILabel!
     @IBOutlet var memeImageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -18,7 +17,7 @@ class MemeCell: UITableViewCell {
         activityIndicator.startAnimating()
         memeLabel.text = meme.title
         
-        NetworkManager.shared.fetchImage(from: meme.url) { [weak self] result in
+        NetworkManager.shared.fetchImageData(from: meme.url) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.memeImageView.image = UIImage(data: imageData)
