@@ -19,11 +19,9 @@ class NetworkManager {
     
     func fetchMemeList(from url: String, completion: @escaping(Result<MemeList, AFError>) -> Void) {
         AF.request(url)
-            .validate()
-            .responseJSON { dataResponse in
-                switch dataResponse.result {
-                case .success(let value):
-                    let memeList = MemeList.getMemeListData(from: value)
+            .responseDecodable(of: MemeList.self) { response in
+                switch response.result {
+                case .success(let memeList):
                     completion(.success(memeList))
                 case .failure(let error):
                     completion(.failure(error))

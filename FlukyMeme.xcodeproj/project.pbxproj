@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		51062B71291C27AD002F2223 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51062B70291C27AD002F2223 /* NetworkManager.swift */; };
+		510E0E4C2922D33E00D35E87 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 510E0E4B2922D33E00D35E87 /* Alamofire */; };
 		513FA1C329148D8C00A55D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FA1C229148D8C00A55D61 /* AppDelegate.swift */; };
 		513FA1C529148D8C00A55D61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FA1C429148D8C00A55D61 /* SceneDelegate.swift */; };
 		513FA1CA29148D8C00A55D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513FA1C829148D8C00A55D61 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		51D2F514291C4BCC00857887 /* MemeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2F513291C4BCC00857887 /* MemeListViewController.swift */; };
 		51D2F516291C5A3A00857887 /* MemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2F515291C5A3A00857887 /* MemeCell.swift */; };
 		51FBBDC329214A36007B03E1 /* MemeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBBDC229214A36007B03E1 /* MemeInfoViewController.swift */; };
-		51FBBDC629216C9C007B03E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 51FBBDC529216C9C007B03E1 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51FBBDC629216C9C007B03E1 /* Alamofire in Frameworks */,
+				510E0E4C2922D33E00D35E87 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +154,7 @@
 			);
 			name = FlukyMeme;
 			packageProductDependencies = (
-				51FBBDC529216C9C007B03E1 /* Alamofire */,
+				510E0E4B2922D33E00D35E87 /* Alamofire */,
 			);
 			productName = FlukyMeme;
 			productReference = 513FA1BF29148D8C00A55D61 /* FlukyMeme.app */;
@@ -185,7 +185,7 @@
 			);
 			mainGroup = 513FA1B629148D8C00A55D61;
 			packageReferences = (
-				51FBBDC429216C9C007B03E1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				510E0E4A2922D33D00D35E87 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 513FA1C029148D8C00A55D61 /* Products */;
 			projectDirPath = "";
@@ -452,20 +452,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		51FBBDC429216C9C007B03E1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		510E0E4A2922D33D00D35E87 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
-				kind = exactVersion;
-				version = 5.0.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		51FBBDC529216C9C007B03E1 /* Alamofire */ = {
+		510E0E4B2922D33E00D35E87 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 51FBBDC429216C9C007B03E1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 510E0E4A2922D33D00D35E87 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
