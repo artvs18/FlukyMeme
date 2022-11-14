@@ -5,14 +5,9 @@
 //  Created by Artemy Volkov on 04.11.2022.
 //
 
-struct MemeList: Decodable {
+struct MemeList {
     let count: Int
     let memes: [Meme]
-    
-    init(count: Int, memes: [Meme]) {
-        self.count = count
-        self.memes = memes
-    }
     
     init(memeListData: [String: Any]) {
         let memesData = memeListData["memes"] as? [[String: Any]]
@@ -26,8 +21,7 @@ struct MemeList: Decodable {
     }
 }
 
-
-struct Meme: Decodable {
+struct Meme {
     let postLink: String
     let subreddit: String
     let title: String
@@ -46,15 +40,6 @@ struct Meme: Decodable {
         """
     }
     
-    init(postLink: String, subreddit: String, title: String, url: String, author: String, ups: Int) {
-        self.postLink = postLink
-        self.subreddit = subreddit
-        self.title = title
-        self.url = url
-        self.author = author
-        self.ups = ups
-    }
-    
     init(memeData: [String: Any]) {
         postLink = memeData["postLink"] as? String ?? ""
         subreddit = memeData["subreddit"] as? String ?? ""
@@ -62,10 +47,5 @@ struct Meme: Decodable {
         url = memeData["url"] as? String ?? ""
         author = memeData["author"] as? String ?? ""
         ups = memeData["ups"] as? Int ?? 0
-    }
-    
-    static func getMeme(from value: Any) -> Meme {
-        guard let memeData = value as? [String: Any] else { return Meme(memeData: [:]) }
-        return Meme(memeData: memeData)
     }
 }
