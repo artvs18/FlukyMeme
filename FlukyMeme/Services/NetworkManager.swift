@@ -12,33 +12,36 @@ enum Link: String {
     case memeListURL = "https://meme-api.herokuapp.com/gimme/50"
 }
 
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
+
 class NetworkManager {
     static let shared = NetworkManager()
     
     private init() {}
     
-    func fetchMemeList(from url: String, completion: @escaping(Result<MemeList, AFError>) -> Void) {
-        AF.request(url)
-            .responseDecodable(of: MemeList.self) { response in
-                switch response.result {
-                case .success(let memeList):
+    func fetchMemeList(from url: String, completion: @escaping(Result<MemeList, NetworkError>) -> Void) {
+        guard let url = URL(string: url) else { completion(.failure(.invalidURL))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error description")
+                completion(.failure(.noData))
+                return
+            }
+            do {
+                let memeList = try JSONDecoder().decode(MemeList.self, from: data)
+                DispatchQueue.main.async {
                     completion(.success(memeList))
-                case .failure(let error):
-                    completion(.failure(error))
                 }
+            } catch {
+                completion(.failure(.decodingError))
             }
-    }
-    
-    func fetchImageData(from url: String, completion: @escaping(Result<Data, AFError>) -> Void) {
-        AF.request(url)
-            .validate()
-            .responseData { dataResponse in
-                switch dataResponse.result {
-                case .success(let imageData):
-                    completion(.success(imageData))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
+        }.resume()
     }
 }
