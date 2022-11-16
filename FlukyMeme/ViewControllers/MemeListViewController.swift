@@ -56,11 +56,11 @@ extension MemeListViewController {
     // MARK: - Network
     
     func fetchMemeList() {
-        NetworkManager.shared.fetchMemeList(from: Link.memeListURL.rawValue) { [weak self] result in
+        NetworkManager.shared.fetchMemeList(from: Link.memeListURL.rawValue) { result in
             switch result {
             case .success(let memeList):
-                self?.memeList = memeList
-                self?.tableView.reloadData()
+                self.memeList = memeList
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }

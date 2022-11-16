@@ -6,25 +6,26 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MemeCell: UITableViewCell {
     @IBOutlet var memeLabel: UILabel!
-    @IBOutlet var memeImageView: UIImageView!
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var memeImageView: AnimatedImageView!
     
     func configure(with meme: Meme) {
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
         memeLabel.text = meme.title
-        
-        NetworkManager.shared.fetchImageData(from: meme.url) { [weak self] result in
-            switch result {
-            case .success(let imageData):
-                self?.memeImageView.image = UIImage(data: imageData)
-                self?.activityIndicator.stopAnimating()
-            case .failure(let error):
-                print(error)
-            }
-        }
+        guard let imageURL = URL(string: meme.url) else { return }
+        let processor = DownsamplingImageProcessor(size: memeImageView.bounds.size)
+        memeImageView.kf.indicatorType = .activity
+        memeImageView.kf.setImage(
+            with: imageURL,
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ]
+        )
     }
 }
+
