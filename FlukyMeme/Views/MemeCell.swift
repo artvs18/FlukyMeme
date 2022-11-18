@@ -15,12 +15,10 @@ class MemeCell: UITableViewCell {
     func configure(with meme: Meme) {
         memeLabel.text = meme.title
         guard let imageURL = URL(string: meme.url) else { return }
-        let processor = DownsamplingImageProcessor(size: memeImageView.bounds.size)
         memeImageView.kf.indicatorType = .activity
         memeImageView.kf.setImage(
             with: imageURL,
             options: [
-                .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(1)),
                 .cacheOriginalImage
@@ -28,4 +26,3 @@ class MemeCell: UITableViewCell {
         )
     }
 }
-

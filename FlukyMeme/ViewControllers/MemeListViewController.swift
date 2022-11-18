@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MemeListViewController: UITableViewController {
     private var memeList: MemeList?
@@ -16,6 +17,8 @@ class MemeListViewController: UITableViewController {
     }
     
     @IBAction func moreFlukyMemesButtonTapped(_ sender: UIBarButtonItem) {
+        let cache = ImageCache.default
+        cache.clearCache()
         fetchMemeList()
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
